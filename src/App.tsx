@@ -1,33 +1,52 @@
-import { Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [clicked, setClicked] = useState(false);
+  const darkTheme = createTheme({
+    palette: { mode: "dark" },
+  });
+
+  const lightTheme = createTheme({
+    palette: { mode: "light" },
+  });
+
+  const [theme, setTheme] = useState(darkTheme);
+
+  const toggleTheme = (): void => {
+    setTheme((current) => {
+      if (current.palette.mode === "light") {
+        return darkTheme;
+      } else {
+        return lightTheme;
+      }
+    });
+  };
 
   return (
-    <Box p={0} m={-1} minHeight="100vh" width="100vw" component="main" id="App">
-      <Box
-        minHeight="100vh"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        position="relative"
+    <ThemeProvider theme={theme}>
+      <motion.div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          backgroundColor: "rgb(18,18,18)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          overflow: "hidden",
+          position: "relative",
+          zIndex: 0,
+        }}
+        id="App"
       >
-        <motion.div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          initial={{ scale: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Button variant="contained">Hello</Button>
-        </motion.div>
-      </Box>
-    </Box>
+        <Navbar toggleTheme={toggleTheme} />
+        <Outlet />
+      </motion.div>
+    </ThemeProvider>
   );
 }
 
