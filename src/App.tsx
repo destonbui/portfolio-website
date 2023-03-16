@@ -1,18 +1,25 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Navbar from "./components/Navbar";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   const darkTheme = createTheme({
-    palette: { mode: "dark" },
+    palette: {
+      mode: "dark",
+      primary: { main: "#fff" },
+    },
+    typography: { fontFamily: `"Mulish", "Philosopher"` },
   });
 
   const lightTheme = createTheme({
-    palette: { mode: "light" },
+    palette: { mode: "light", primary: { main: "#000" } },
+    typography: { fontFamily: `"Mulish", "Philosopher"` },
   });
 
   const [theme, setTheme] = useState(darkTheme);
@@ -29,8 +36,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <motion.div
-        style={{
+      <Box
+        sx={{
           height: "100vh",
           width: "100vw",
           backgroundColor: "rgb(18,18,18)",
@@ -44,8 +51,9 @@ function App() {
         id="App"
       >
         <Navbar toggleTheme={toggleTheme} />
+
         <Outlet />
-      </motion.div>
+      </Box>
     </ThemeProvider>
   );
 }
