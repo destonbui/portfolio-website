@@ -6,7 +6,6 @@ import { Box } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Navbar from "./components/Navbar";
-import BottomNav from "./components/BottomNav";
 
 function App() {
   const darkTheme = createTheme({
