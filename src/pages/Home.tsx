@@ -499,6 +499,7 @@ function Home() {
             <Tooltip title="Mongodb" arrow>
               <motion.img
                 draggable={false}
+                src={"mongodb-icon-1.svg"}
                 animate={{
                   y: [0, -5, 0],
                   rotate: [10, 0, 10],

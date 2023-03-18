@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
-import UnfoldMoreDoubleIcon from "@mui/icons-material/UnfoldMoreDouble";
+import { Box } from "@mui/material";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -38,7 +36,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box
         sx={{
-          height: "100vh",
+          height: "100svh",
           width: "100vw",
           backgroundColor: "rgb(18,18,18)",
           display: "flex",
