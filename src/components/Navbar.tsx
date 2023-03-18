@@ -147,20 +147,6 @@ function Navbar({ toggleTheme }: NavbarProps) {
 
           <DarkLightSwitch toggleTheme={toggleTheme} />
         </Stack>
-
-        {/* <Box
-        width="100%"
-        display={{ xs: "flex", sm: "flex", md: "none" }}
-        flexDirection="row"
-      >
-        
-        <IconButton sx={{ ml: -1 }}>
-          <MenuIcon />
-        </IconButton>
-        <Box flexGrow={1}></Box>
-        
-        <DarkLightSwitch toggleTheme={toggleTheme} />
-      </Box> */}
       </Box>
 
       {/* ------------------------------------------------------------------------- */}
@@ -175,9 +161,11 @@ function Navbar({ toggleTheme }: NavbarProps) {
         alignItems="center"
         position="relative"
       >
-        <IconButton sx={{ ml: -1 }}>
-          <MenuIcon />
-        </IconButton>
+        <motion.div>
+          <IconButton sx={{ ml: -1 }}>
+            <MenuIcon />
+          </IconButton>
+        </motion.div>
         <Box flexGrow={1}></Box>
 
         <DarkLightSwitch toggleTheme={toggleTheme} />

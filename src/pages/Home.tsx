@@ -3,20 +3,6 @@ import CodeIcon from "@mui/icons-material/Code";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const logoLight = {
-  position: "absolute",
-  right: -420,
-  top: 10,
-  cursor: "grab",
-};
-
-const logoDark = {
-  position: "absolute",
-  right: -420,
-  top: 10,
-  cursor: "grab",
-};
-
 function Home() {
   const theme = useTheme();
   const next = "/skills";
@@ -100,9 +86,9 @@ function Home() {
                 fontWeight={300}
               >
                 Hi, I'm a Full-stack Web Developer with a passion for building
-                fully interactive websites & web applications using React. With
-                a background in sales, I can create beautiful, clean UI/UX that
-                compel and intuitive for the user.
+                fully interactive websites & web applications using React. I can
+                create beautiful web apps with clean UX/UI that help solve
+                business problems or optimize workflow.
               </Typography>
             </motion.div>
             <Box display="flex" flexDirection="row" mt={6}>
@@ -168,8 +154,6 @@ function Home() {
             <Tooltip title="React" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"react-2.svg"}
                 animate={{
                   y: [0, -30, 0],
@@ -207,8 +191,6 @@ function Home() {
             <Tooltip title="Nodejs" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -218,7 +200,6 @@ function Home() {
                 }}
                 style={{
                   height: "80px",
-
                   filter:
                     theme.palette.mode === "light"
                       ? "drop-shadow(-2px 4px 2px rgb(150 150 150 / 0.4))"
@@ -247,8 +228,6 @@ function Home() {
             <Tooltip title="Firebase" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"firebase-1.svg"}
                 animate={{
                   y: [5, -5, 5],
@@ -259,7 +238,6 @@ function Home() {
                 }}
                 style={{
                   height: "75px",
-
                   filter:
                     theme.palette.mode === "light"
                       ? "drop-shadow(-2px 4px 2px rgb(100 100 100 / 0.4))"
@@ -288,8 +266,6 @@ function Home() {
             <Tooltip title="Material UI" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"material-ui-1.svg"}
                 animate={{
                   x: [5, 0, 5],
@@ -317,7 +293,7 @@ function Home() {
               transition: {
                 duration: 0.9,
                 type: "spring",
-                stiffness: 10,
+                stiffness: 20,
                 delay: 3.9,
               },
             }}
@@ -327,8 +303,6 @@ function Home() {
             <Tooltip title="Mongodb" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"mongodb-icon-1.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -348,8 +322,12 @@ function Home() {
           </motion.div>
         </Box>
 
+        {/* ------------------------------------------------------------------------------------------------------ */}
+        {/* --------------------------------Icons display for mobile below---------------------------------------- */}
+        {/* ------------------------------------------------------------------------------------------------------ */}
+
         <Box
-          mt={{ xs: 5, sm: 5, md: 15 }}
+          mt={{ xs: 7, sm: 7, md: 15 }}
           width="100%"
           display={{ xs: "flex", sm: "flex", md: "none" }}
           flexDirection="row"
@@ -374,8 +352,6 @@ function Home() {
             <Tooltip title="React" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"react-2.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -412,8 +388,6 @@ function Home() {
             <Tooltip title="Nodejs" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -451,8 +425,6 @@ function Home() {
             <Tooltip title="Firebase" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"firebase-1.svg"}
                 animate={{
                   y: [5, -5, 5],
@@ -491,8 +463,6 @@ function Home() {
             <Tooltip title="Material UI" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
                 src={"material-ui-1.svg"}
                 animate={{
                   x: [5, 0, 5],
@@ -529,9 +499,6 @@ function Home() {
             <Tooltip title="Mongodb" arrow>
               <motion.img
                 draggable={false}
-                drag
-                dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-                src={"mongodb-icon-1.svg"}
                 animate={{
                   y: [0, -5, 0],
                   rotate: [10, 0, 10],

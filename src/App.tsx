@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import UnfoldMoreDoubleIcon from "@mui/icons-material/UnfoldMoreDouble";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
