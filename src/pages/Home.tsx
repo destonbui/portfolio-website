@@ -33,7 +33,7 @@ function Home() {
       >
         {/* For main content */}
         <Box
-          mt={{ xs: 5, sm: 5, md: 15 }}
+          mt={{ xs: 4, sm: 4, md: 15 }}
           width={{ xs: "100%", sm: "100%", md: "55%" }}
           position="relative"
         >
