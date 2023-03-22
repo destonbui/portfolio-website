@@ -24,7 +24,7 @@ function SmallScreenNavbar({ toggleTheme }: NavbarProps) {
 
   return (
     <Box
-      mt={{ xs: 2, sm: 2, md: 5 }}
+      mt={{ xs: 1, sm: 1 }}
       height="80px"
       width="80%"
       maxWidth={1200}

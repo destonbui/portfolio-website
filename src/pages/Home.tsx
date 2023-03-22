@@ -13,6 +13,7 @@ function Home() {
       onWheel={(e) => {
         if (e.deltaY > 0) {
           navigate(next);
+          return;
         }
       }}
       style={{
@@ -33,7 +34,7 @@ function Home() {
       >
         {/* For main content */}
         <Box
-          mt={{ xs: 4, sm: 4, md: 15 }}
+          mt={{ xs: 2, sm: 2, md: 10 }}
           width={{ xs: "100%", sm: "100%", md: "55%" }}
           position="relative"
         >
@@ -47,7 +48,7 @@ function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              exit={{ opacity: 0, y: -80, transition: { duration: 0.5 } }}
+              exit={{ opacity: 0, y: -30, transition: { duration: 0.5 } }}
             >
               <Typography
                 variant="h1"
@@ -61,7 +62,6 @@ function Home() {
                   lg: "5rem",
                   xl: "6rem",
                 }}
-                sx={{ mb: 1 }}
               >
                 Deston Bui
               </Typography>
@@ -70,7 +70,7 @@ function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75 }}
-              exit={{ opacity: 0, y: -50, transition: { duration: 0.75 } }}
+              exit={{ opacity: 0, y: -30, transition: { duration: 0.75 } }}
             >
               <Typography
                 variant="body1"
@@ -79,36 +79,44 @@ function Home() {
                 fontSize={{
                   xs: "1.2rem",
                   sm: "1.2rem",
-                  md: "1.3rem",
+                  md: "1.4rem",
                   lg: "1.4rem",
                   xl: "1.5rem",
                 }}
-                fontWeight={300}
+                fontWeight={400}
               >
                 Hi, I'm a Full-stack Web Developer with a passion for building
-                fully interactive websites & web applications using React. I can
-                create beautiful web apps with clean UX/UI that help solve
-                business problems or optimize workflow.
+                fully interactive websites & web applications with clean UX/UI
+                using React. I'm currently looking for an opportunity to work
+                full-time as a developer.
+                <br />
+                Let's build great things, together!
               </Typography>
             </motion.div>
-            <Box display="flex" flexDirection="row" mt={6}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              mt={5}
+              gap={{ xs: 1, md: 2 }}
+            >
               <motion.div
                 initial={{ opacity: 0, y: 50, scale: 1 }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.9 } }}
-                whileHover={{ zoom: 1.05 }}
                 whileTap={{ zoom: 0.95 }}
-                exit={{ opacity: 0, y: -80, transition: { duration: 0.9 } }}
+                exit={{ opacity: 0, y: -30, transition: { duration: 0.9 } }}
               >
                 <Button
                   onClick={() => {
                     navigate("/projects");
                   }}
                   variant="outlined"
+                  size={"small"}
                   color="primary"
                   endIcon={<CodeIcon />}
                   sx={{
+                    px: { md: 3 },
                     fontSize: {
-                      xs: "1rem",
+                      xs: "0.9rem",
                       sm: "1rem",
                       md: "1.1rem",
                       lg: "1.2rem",
@@ -120,6 +128,34 @@ function Home() {
                   See my work
                 </Button>
               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50, scale: 1 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.9 } }}
+                whileTap={{ zoom: 0.95 }}
+                exit={{ opacity: 0, y: -30, transition: { duration: 0.9 } }}
+              >
+                <Button
+                  onClick={() => {
+                    navigate("/contact");
+                  }}
+                  variant="contained"
+                  color="primary"
+                  size={"small"}
+                  sx={{
+                    px: { md: 3 },
+                    fontSize: {
+                      xs: "0.9rem",
+                      sm: "1rem",
+                      md: "1.1rem",
+                      lg: "1.2rem",
+                    },
+                    fontWeight: 400,
+                    borderRadius: 10,
+                  }}
+                >
+                  Hire me
+                </Button>
+              </motion.div>
             </Box>
           </motion.div>
         </Box>
@@ -128,7 +164,7 @@ function Home() {
 
         {/* For Tech Icons */}
         <Box
-          mt={{ xs: 5, sm: 5, md: 15 }}
+          mt={{ md: 10 }}
           width={{ xs: "100%", sm: "100%", md: "375px" }}
           height="350px"
           position="relative"
@@ -144,8 +180,8 @@ function Home() {
               transition: {
                 duration: 0.9,
                 type: "spring",
-                stiffness: 10,
-                delay: 2.5,
+                stiffness: 20,
+                delay: 2,
               },
             }}
             style={{ position: "absolute", top: 20, left: 20 }}
@@ -154,6 +190,10 @@ function Home() {
             <Tooltip title="React" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"react-2.svg"}
                 animate={{
                   y: [0, -30, 0],
@@ -162,6 +202,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 4 },
                 }}
                 style={{
+                  cursor: "pointer",
                   height: "100px",
                   filter:
                     theme.palette.mode === "light"
@@ -182,7 +223,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 25,
-                delay: 3.25,
+                delay: 3,
               },
             }}
             style={{ position: "absolute", top: 115, left: 140 }}
@@ -191,6 +232,10 @@ function Home() {
             <Tooltip title="Nodejs" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -199,6 +244,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 2 },
                 }}
                 style={{
+                  cursor: "pointer",
                   height: "80px",
                   filter:
                     theme.palette.mode === "light"
@@ -219,7 +265,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 50,
-                delay: 3.7,
+                delay: 2.75,
               },
             }}
             style={{ position: "absolute", bottom: 30, left: 60 }}
@@ -228,6 +274,10 @@ function Home() {
             <Tooltip title="Firebase" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"firebase-1.svg"}
                 animate={{
                   y: [5, -5, 5],
@@ -237,6 +287,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 4 },
                 }}
                 style={{
+                  cursor: "pointer",
                   height: "75px",
                   filter:
                     theme.palette.mode === "light"
@@ -256,8 +307,8 @@ function Home() {
               transition: {
                 duration: 0.9,
                 type: "spring",
-                stiffness: 10,
-                delay: 2.8,
+                stiffness: 20,
+                delay: 2.5,
               },
             }}
             style={{ position: "absolute", bottom: 70, right: 40 }}
@@ -266,6 +317,10 @@ function Home() {
             <Tooltip title="Material UI" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"material-ui-1.svg"}
                 animate={{
                   x: [5, 0, 5],
@@ -274,6 +329,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 5 },
                 }}
                 style={{
+                  cursor: "pointer",
                   height: "70px",
                   filter:
                     theme.palette.mode === "light"
@@ -294,7 +350,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 3.9,
+                delay: 3.25,
               },
             }}
             style={{ position: "absolute", top: 0, right: 50 }}
@@ -303,6 +359,10 @@ function Home() {
             <Tooltip title="Mongodb" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"mongodb-icon-1.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -311,6 +371,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 3 },
                 }}
                 style={{
+                  cursor: "pointer",
                   height: "80px",
                   filter:
                     theme.palette.mode === "light"
@@ -327,7 +388,7 @@ function Home() {
         {/* ------------------------------------------------------------------------------------------------------ */}
 
         <Box
-          mt={{ xs: 7, sm: 7, md: 15 }}
+          mt={{ xs: 5, sm: 5 }}
           width="100%"
           display={{ xs: "flex", sm: "flex", md: "none" }}
           flexDirection="row"
@@ -352,6 +413,10 @@ function Home() {
             <Tooltip title="React" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"react-2.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -388,6 +453,10 @@ function Home() {
             <Tooltip title="Nodejs" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
@@ -425,6 +494,10 @@ function Home() {
             <Tooltip title="Firebase" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"firebase-1.svg"}
                 animate={{
                   y: [5, -5, 5],
@@ -463,6 +536,10 @@ function Home() {
             <Tooltip title="Material UI" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"material-ui-1.svg"}
                 animate={{
                   x: [5, 0, 5],
@@ -499,6 +576,10 @@ function Home() {
             <Tooltip title="Mongodb" arrow>
               <motion.img
                 draggable={false}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  navigate("/skills");
+                }}
                 src={"mongodb-icon-1.svg"}
                 animate={{
                   y: [0, -5, 0],

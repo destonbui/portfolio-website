@@ -14,8 +14,12 @@ function TopNavItem({ pathname, to, path }: TopNavItemProps) {
   const textPrimary = theme.palette.text.primary;
   const textSecondary = theme.palette.text.secondary;
   const variants = {
-    normal: { color: textSecondary },
-    active: { color: textPrimary },
+    normal: { color: textSecondary, transition: { duration: 0.5 } },
+    active: {
+      color: textPrimary,
+      filter: "drop-shadow(0px 0px 10px rgb(255, 255, 255, 0.5))",
+      transition: { duration: 0.5 },
+    },
   };
   return (
     <motion.span
@@ -33,7 +37,8 @@ function TopNavItem({ pathname, to, path }: TopNavItemProps) {
       <Typography
         variant="body1"
         letterSpacing={1}
-        fontWeight={400}
+        fontFamily="Mulish"
+        fontWeight={theme.palette.mode === "light" ? 700 : 400}
         sx={{
           fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
         }}

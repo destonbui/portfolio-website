@@ -3,9 +3,21 @@ import CodeIcon from "@mui/icons-material/Code";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function Projects() {
+function Skills() {
+  const navigate = useNavigate();
+  const prev = "/skills";
+  const next = "/contact";
   return (
     <motion.div
+      onWheel={(e) => {
+        if (e.deltaY > 0) {
+          navigate(next);
+          return;
+        } else {
+          navigate(prev);
+          return;
+        }
+      }}
       style={{
         height: "100%",
         width: "80%",
@@ -13,10 +25,8 @@ function Projects() {
         position: "relative",
         zIndex: 2,
       }}
-    >
-      <Box mt={20} width="65%"></Box>
-    </motion.div>
+    ></motion.div>
   );
 }
 
-export default Projects;
+export default Skills;

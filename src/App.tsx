@@ -12,7 +12,7 @@ function App() {
       mode: "dark",
       primary: { main: "#fff" },
     },
-    typography: { fontFamily: `"Mulish", "Philosopher"` },
+    typography: { fontFamily: `"Mulish"` },
   });
 
   const lightTheme = createTheme({
