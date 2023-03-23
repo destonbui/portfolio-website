@@ -28,7 +28,7 @@ function Backdrop({ drawerOpen, closeDrawer }: BackdropProps) {
         left: "-10vw",
         zIndex: 4,
         width: "100vw",
-        height: "100svh",
+        height: "100vh",
         backgroundColor: "rgb(0, 0, 0, 0.5)",
       }}
       variants={backdropVariants}

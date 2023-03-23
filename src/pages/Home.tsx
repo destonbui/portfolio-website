@@ -350,7 +350,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 3.25,
+                delay: 3.1,
               },
             }}
             style={{ position: "absolute", top: 0, right: 50 }}

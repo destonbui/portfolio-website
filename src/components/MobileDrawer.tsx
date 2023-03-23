@@ -45,7 +45,7 @@ function MobileDrawer({
         x: -300,
         zIndex: 5,
         width: "200px",
-        height: "100svh",
+        height: "100vh",
         backgroundColor: "#000",
       }}
       variants={drawerVariants}

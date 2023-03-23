@@ -279,14 +279,20 @@ function Skills() {
         justifyContent="space-between"
         mt={4}
       >
-        <Box
-          display={"flex"}
-          border={`1px solid ${theme.palette.primary.main}`}
-          borderRadius={4}
-          py={2}
-          px={4}
-          alignItems="center"
-          justifyContent={"center"}
+        <motion.div
+          style={{
+            border: `1px solid ${theme.palette.primary.main}`,
+            borderRadius: "2rem",
+            padding: "1rem 2rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          variants={defaultVariants}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          transition={{ duration: 0.5 }}
         >
           <Typography
             variant="h1"
@@ -297,10 +303,25 @@ function Skills() {
           >
             Skills & Experience
           </Typography>
-        </Box>
+        </motion.div>
 
-        <Box display="flex" flexDirection="column" mt={4}>
-          <Box display="flex" flexDirection="column" width="100%">
+        <motion.div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "2rem",
+          }}
+          variants={defaultVariants}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+            variants={defaultVariants}
+            transition={{ duration: 0.5 }}
+          >
             <Typography
               variant="h2"
               color="text.primary"
@@ -312,11 +333,16 @@ function Skills() {
             >
               FRONT-END
             </Typography>
-            <Box
-              display="flex"
-              flexDirection="row"
-              flexWrap="wrap"
-              width="100%"
+            <motion.div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+              variants={containerVariants}
+              initial={"hidden"}
+              animate={"show"}
             >
               {frontend.map((skill, i) => {
                 return (
@@ -330,6 +356,7 @@ function Skills() {
                       alignItems: "center",
                       justifyContent: "center",
                     }}
+                    variants={iconVariants}
                   >
                     <motion.img
                       style={{
@@ -351,12 +378,16 @@ function Skills() {
                   </motion.div>
                 );
               })}
-            </Box>
-          </Box>
+            </motion.div>
+          </motion.div>
 
           <Divider flexItem sx={{ mt: 2, mb: 4 }} />
 
-          <Box display="flex" flexDirection="column" width="100%">
+          <motion.div
+            style={{ display: "flex", flexDirection: "column", width: "100%" }}
+            variants={defaultVariants}
+            transition={{ duration: 0.5 }}
+          >
             <Typography
               variant="h2"
               color="text.primary"
@@ -368,11 +399,16 @@ function Skills() {
             >
               BACK-END
             </Typography>
-            <Box
-              display="flex"
-              flexDirection="row"
-              flexWrap="wrap"
-              width="100%"
+            <motion.div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                width: "100%",
+              }}
+              variants={containerVariants}
+              initial={"hidden"}
+              animate={"show"}
             >
               {backend.map((skill, i) => {
                 return (
@@ -386,6 +422,7 @@ function Skills() {
                       alignItems: "center",
                       justifyContent: "center",
                     }}
+                    variants={iconVariants}
                   >
                     <motion.img
                       style={{
@@ -409,9 +446,9 @@ function Skills() {
                   </motion.div>
                 );
               })}
-            </Box>
-          </Box>
-        </Box>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </Box>
     </motion.div>
   );
