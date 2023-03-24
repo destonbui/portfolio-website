@@ -350,7 +350,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 3.1,
+                delay: 3.25,
               },
             }}
             style={{ position: "absolute", top: 0, right: 50 }}
@@ -368,7 +368,7 @@ function Home() {
                   y: [0, -5, 0],
                   rotate: [10, 0, 10],
                   type: "spring",
-                  transition: { repeat: "infinite", duration: 3 },
+                  transition: { repeat: "infinite", duration: 2 },
                 }}
                 style={{
                   cursor: "pointer",

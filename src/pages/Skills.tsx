@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { backend, frontend } from "../skills";
 
-import { useRef } from "react";
-
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -31,7 +29,7 @@ function Skills() {
   const prev = "/";
   const next = "/projects";
   const theme = useTheme();
-  const frontendContainerRef = useRef(null);
+
   return (
     <motion.div
       onWheel={(e) => {
@@ -56,7 +54,7 @@ function Skills() {
         flexDirection="column"
         width="100%"
         justifyContent="space-between"
-        mt={{ md: 10 }}
+        mt={10}
       >
         <motion.div
           style={{
