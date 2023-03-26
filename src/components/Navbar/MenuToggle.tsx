@@ -1,7 +1,17 @@
 import { motion } from "framer-motion";
 import { useTheme } from "@mui/material";
 
-export default function MenuToggle({ drawerOpen, open, close }) {
+type MenuToggleProps = {
+  drawerOpen: boolean;
+  open: () => void;
+  close: () => void;
+};
+
+export default function MenuToggle({
+  drawerOpen,
+  open,
+  close,
+}: MenuToggleProps) {
   const theme = useTheme();
 
   return (

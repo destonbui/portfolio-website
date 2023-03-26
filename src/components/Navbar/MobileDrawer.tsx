@@ -2,7 +2,7 @@ import { Box, List, ListItem, ListItemText } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import { navItems } from "../navItems";
+import { navItems } from "../../navItems";
 import DrawerNavItem from "./DrawerNavItem";
 
 type MobileDrawerProps = {

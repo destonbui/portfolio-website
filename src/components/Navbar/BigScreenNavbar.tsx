@@ -5,7 +5,7 @@ import DarkLightSwitch from "./DarkLightSwitch";
 
 import Logo from "./Logo";
 import TopNavItem from "./TopNavItem";
-import { navItems } from "../navItems";
+import { navItems } from "../../navItems";
 
 type NavbarProps = {
   toggleTheme: () => void;

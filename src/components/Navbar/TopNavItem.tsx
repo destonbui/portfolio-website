@@ -38,7 +38,8 @@ function TopNavItem({ pathname, to, path }: TopNavItemProps) {
         variant="body1"
         letterSpacing={1}
         fontFamily="Mulish"
-        fontWeight={theme.palette.mode === "light" ? 700 : 400}
+        // fontWeight={theme.palette.mode === "light" ? 700 : 400}
+        fontWeight={400}
         sx={{
           fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
         }}

@@ -62,6 +62,7 @@ function Home() {
                   lg: "5rem",
                   xl: "6rem",
                 }}
+                sx={{ mb: 1 }}
               >
                 Deston Bui
               </Typography>
@@ -86,9 +87,9 @@ function Home() {
                 fontWeight={400}
               >
                 Hi, I'm a Full-stack Web Developer with a passion for building
-                fully interactive websites & web applications with clean UX/UI
-                using React. I'm currently looking for an opportunity to work
-                full-time as a developer.
+                web applications with clean UI and intuitive UX using React. I'm
+                currently looking for an opportunity to work full-time as a
+                developer.
                 <br />
                 Let's build great things, together!
               </Typography>
@@ -153,7 +154,7 @@ function Home() {
                     borderRadius: 10,
                   }}
                 >
-                  Hire me
+                  Let's talk
                 </Button>
               </motion.div>
             </Box>
@@ -164,7 +165,7 @@ function Home() {
 
         {/* For Tech Icons */}
         <Box
-          mt={{ md: 10 }}
+          mt={{ md: 14 }}
           width={{ xs: "100%", sm: "100%", md: "375px" }}
           height="350px"
           position="relative"
@@ -349,30 +350,30 @@ function Home() {
               transition: {
                 duration: 0.9,
                 type: "spring",
-                stiffness: 20,
+                stiffness: 15,
                 delay: 3.25,
               },
             }}
             style={{ position: "absolute", top: 0, right: 50 }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
           >
-            <Tooltip title="Mongodb" arrow>
+            <Tooltip title="Framer Motion" arrow>
               <motion.img
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   navigate("/skills");
                 }}
-                src={"mongodb-icon-1.svg"}
+                src={"framer-motion.svg"}
                 animate={{
                   y: [0, -5, 0],
-                  rotate: [10, 0, 10],
+                  rotate: [-10, 0, -10],
                   type: "spring",
-                  transition: { repeat: "infinite", duration: 2 },
+                  transition: { repeat: "infinite", duration: 6 },
                 }}
                 style={{
                   cursor: "pointer",
-                  height: "80px",
+                  height: "60px",
                   filter:
                     theme.palette.mode === "light"
                       ? "drop-shadow(-2px 2px 2px rgb(100 100 100 / 0.4))"
