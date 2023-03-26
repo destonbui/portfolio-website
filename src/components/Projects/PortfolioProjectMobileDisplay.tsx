@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
 
-function PortfolioProjectDisplay() {
+function PortfolioProjectMobileDisplay() {
   const [currentImg, setCurrent] = useState(1);
 
   const sxInactive = { color: "gray", fontSize: "1rem", cursor: "pointer" };
@@ -17,10 +17,10 @@ function PortfolioProjectDisplay() {
   const theme = useTheme();
   return (
     <motion.div
-      key="Portfolio"
+      key="Ontrack"
       initial={{
         display: "flex",
-        flexDirection: "row-reverse",
+        flexDirection: "column",
         width: "100%",
         opacity: 0,
       }}
@@ -30,121 +30,18 @@ function PortfolioProjectDisplay() {
       }}
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      <motion.div
-        initial={{
-          display: "flex",
-          flexDirection: "column",
-          width: "30%",
-          marginLeft: "2rem",
-          x: 50,
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.5, delay: 0.5 },
-        }}
-        exit={{
-          opacity: 0,
-          x: 50,
-          transition: { duration: 0.5 },
-        }}
-      >
-        <Box
-          display="flex"
-          flexDirection="row"
-          gap={2}
-          alignItems="center"
-          mb={{ md: 1, lg: 2 }}
-        >
-          <motion.img src="/react-2.svg" width="30px" />
-          <motion.img
-            src="/material-ui-1.svg"
-            width="30px"
-            style={{
-              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
-            }}
-          />
-          <motion.img
-            src={
-              theme.palette.mode === "light"
-                ? "/react-router-mark-color.svg"
-                : "/react-router-mark-color-inverted.svg"
-            }
-            width="30px"
-            style={{
-              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
-            }}
-          />
-          <motion.img
-            src="/framer-motion.svg"
-            height="30px"
-            style={{
-              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
-            }}
-          />
-          <motion.img
-            src="/typescript.svg"
-            height="30px"
-            style={{
-              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
-            }}
-          />
-        </Box>
-        <Typography
-          variant="h2"
-          color="text.primary"
-          fontFamily="Mulish"
-          fontWeight={700}
-          fontSize={{ md: "54px", lg: "60px" }}
-          component="span"
-          sx={{ ml: -0.5 }}
-        >
-          Deston B.
-        </Typography>
-        <Typography
-          variant="overline"
-          letterSpacing={2}
-          fontSize={{ md: "10px", lg: "12px" }}
-          color="text.secondary"
-        >
-          My Portfolio Website
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.primary"
-          fontSize={{ md: "14px", lg: "16px" }}
-        >
-          This is portfolio website project. It's the first project where I use
-          Typescript & Framer Motion.
-        </Typography>
-
-        <Box flexGrow={1} />
-
-        <Box display="flex" flexDirection="row" gap={1}>
-          <Button
-            href="https://github.com/destonbui/portfolio-website"
-            target="_blank"
-            variant="outlined"
-            size="small"
-            endIcon={<GitHubIcon />}
-            sx={{ borderRadius: "1rem" }}
-          >
-            View Code
-          </Button>
-        </Box>
-      </motion.div>
-
       <Box
-        width="70%"
+        width="100%"
         height="100%"
         display="flex"
         borderRadius="1rem"
         overflow="hidden"
         boxShadow={4}
         position="relative"
+        mt={2}
+        mb={2}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           {currentImg === 1 ? (
             <motion.img
               key={1}
@@ -214,8 +111,105 @@ function PortfolioProjectDisplay() {
           </Box>
         </Box>
       </Box>
+
+      <motion.div
+        initial={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          y: 50,
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5, delay: 0.5 },
+        }}
+        exit={{
+          opacity: 0,
+          y: 50,
+          transition: { duration: 0.5 },
+        }}
+      >
+        <Box
+          display="flex"
+          flexDirection="row"
+          gap={2}
+          alignItems="center"
+          mb={{ md: 1, lg: 2 }}
+        >
+          <motion.img src="/react-2.svg" width="30px" />
+          <motion.img
+            src="/material-ui-1.svg"
+            width="30px"
+            style={{
+              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
+            }}
+          />
+          <motion.img
+            src={
+              theme.palette.mode === "light"
+                ? "/react-router-mark-color.svg"
+                : "/react-router-mark-color-inverted.svg"
+            }
+            width="30px"
+            style={{
+              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
+            }}
+          />
+          <motion.img
+            src="/framer-motion.svg"
+            height="30px"
+            style={{
+              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
+            }}
+          />
+          <motion.img
+            src="/typescript.svg"
+            height="30px"
+            style={{
+              filter: "drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2))",
+            }}
+          />
+        </Box>
+        <Typography
+          variant="h2"
+          color="text.primary"
+          fontFamily="Mulish"
+          fontWeight={700}
+          fontSize={"48px"}
+          component="span"
+        >
+          Deston B.
+        </Typography>
+        <Typography
+          variant="overline"
+          letterSpacing={2}
+          fontSize={"10px"}
+          color="text.secondary"
+        >
+          My Portfolio Website
+        </Typography>
+        <Typography variant="body1" color="text.primary" fontSize={"14px"}>
+          This is portfolio website project. It's the first project where I use
+          Typescript & Framer Motion.
+        </Typography>
+
+        <Box display="flex" flexDirection="row" gap={1} mt={2}>
+          <Button
+            href="https://github.com/destonbui/portfolio-website"
+            target="_blank"
+            variant="outlined"
+            size="small"
+            endIcon={<GitHubIcon />}
+            sx={{ borderRadius: "1rem" }}
+          >
+            View Code
+          </Button>
+        </Box>
+      </motion.div>
     </motion.div>
   );
 }
 
-export default PortfolioProjectDisplay;
+export default PortfolioProjectMobileDisplay;

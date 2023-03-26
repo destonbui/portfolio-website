@@ -17,7 +17,6 @@ function Home() {
         }
       }}
       style={{
-        height: "100%",
         width: "80%",
         maxWidth: 1200,
         position: "relative",
@@ -97,7 +96,7 @@ function Home() {
             <Box
               display="flex"
               flexDirection="row"
-              mt={5}
+              mt={{ xs: 2, md: 5 }}
               gap={{ xs: 1, md: 2 }}
             >
               <motion.div
@@ -182,7 +181,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 2,
+                delay: 1,
               },
             }}
             style={{ position: "absolute", top: 20, left: 20 }}
@@ -224,7 +223,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 25,
-                delay: 3,
+                delay: 2,
               },
             }}
             style={{ position: "absolute", top: 115, left: 140 }}
@@ -266,7 +265,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 50,
-                delay: 2.75,
+                delay: 1.75,
               },
             }}
             style={{ position: "absolute", bottom: 30, left: 60 }}
@@ -309,10 +308,10 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 2.5,
+                delay: 1.5,
               },
             }}
-            style={{ position: "absolute", bottom: 70, right: 40 }}
+            style={{ position: "absolute", bottom: 50, right: 40 }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
           >
             <Tooltip title="Material UI" arrow>
@@ -351,7 +350,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 15,
-                delay: 3.25,
+                delay: 2.25,
               },
             }}
             style={{ position: "absolute", top: 0, right: 50 }}
@@ -406,7 +405,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 10,
-                delay: 2.5,
+                delay: 1.5,
               },
             }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
@@ -446,7 +445,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 25,
-                delay: 3.25,
+                delay: 2.25,
               },
             }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
@@ -487,7 +486,7 @@ function Home() {
                 duration: 0.5,
                 type: "spring",
                 stiffness: 50,
-                delay: 3.7,
+                delay: 2.7,
               },
             }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
@@ -529,7 +528,7 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 10,
-                delay: 2.8,
+                delay: 1.8,
               },
             }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
@@ -569,19 +568,19 @@ function Home() {
                 duration: 0.9,
                 type: "spring",
                 stiffness: 20,
-                delay: 3.9,
+                delay: 2.9,
               },
             }}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.9 } }}
           >
-            <Tooltip title="Mongodb" arrow>
+            <Tooltip title="Framer Motion" arrow>
               <motion.img
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   navigate("/skills");
                 }}
-                src={"mongodb-icon-1.svg"}
+                src={"framer-motion.svg"}
                 animate={{
                   y: [0, -5, 0],
                   rotate: [10, 0, 10],
@@ -589,7 +588,7 @@ function Home() {
                   transition: { repeat: "infinite", duration: 3 },
                 }}
                 style={{
-                  height: "55px",
+                  height: "40px",
                   filter:
                     theme.palette.mode === "light"
                       ? "drop-shadow(-2px 2px 2px rgb(100 100 100 / 0.4))"
