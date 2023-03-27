@@ -27,21 +27,8 @@ function Skills() {
     }
   };
 
-  const navigate = useNavigate();
-  const prev = "/skills";
-  const next = "/contact";
-
   return (
     <motion.div
-      onWheel={(e) => {
-        if (e.deltaY > 0) {
-          navigate(next);
-          return;
-        } else {
-          navigate(prev);
-          return;
-        }
-      }}
       style={{
         flexGrow: 1,
         width: "80%",

@@ -5,17 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const theme = useTheme();
-  const next = "/skills";
+
   const navigate = useNavigate();
 
   return (
     <motion.div
-      onWheel={(e) => {
-        if (e.deltaY > 0) {
-          navigate(next);
-          return;
-        }
-      }}
       style={{
         width: "80%",
         maxWidth: 1200,
@@ -96,7 +90,7 @@ function Home() {
             <Box
               display="flex"
               flexDirection="row"
-              mt={{ xs: 2, md: 5 }}
+              mt={{ xs: 3, md: 5 }}
               gap={{ xs: 1, md: 2 }}
             >
               <motion.div

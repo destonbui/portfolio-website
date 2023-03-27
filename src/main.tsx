@@ -4,7 +4,7 @@ import App from "./App";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import Skills from "./pages/Skills";
+import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
 
 const router = createBrowserRouter([
@@ -21,10 +21,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/skills",
+        path: "/about",
         element: (
           <AnimatePresence mode="wait">
-            <Skills key="Skills" />
+            <About key="About" />
           </AnimatePresence>
         ),
       },

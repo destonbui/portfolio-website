@@ -7,8 +7,6 @@ export const frontend: { path: string; desc: string; path2?: string }[] = [
     path2: "/react-router-mark-color-inverted.svg",
     desc: "React Router",
   },
-  { path: "/html-1.svg", desc: "HTML" },
-  { path: "/css-3.svg", desc: "CSS" },
   { path: "/logo-javascript.svg", desc: "JavaScript" },
   { path: "/typescript.svg", desc: "TypeScript" },
 ];
