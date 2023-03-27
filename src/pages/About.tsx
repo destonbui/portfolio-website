@@ -84,7 +84,7 @@ function About() {
             those years, I encountered lots of business problems and workflow
             flaws. And I can always come up with ideas to solve or optimize
             them. However, with limited resources, I can only build some
-            solutions using Excel. Being able to build websites and web
+            solutions using Google Sheets. Being able to build websites and web
             applications has always been my dream.
             <br />
             <br />
