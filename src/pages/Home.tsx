@@ -192,8 +192,7 @@ function Home() {
                 animate={{
                   y: [0, -30, 0],
                   rotate: [45, 60, 45],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 4 },
+                  transition: { type: "tween", repeat: Infinity, duration: 4 },
                 }}
                 style={{
                   cursor: "pointer",
@@ -233,9 +232,7 @@ function Home() {
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
-
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 2 },
+                  transition: { type: "tween", repeat: Infinity, duration: 2 },
                 }}
                 style={{
                   cursor: "pointer",
@@ -277,8 +274,7 @@ function Home() {
                   y: [5, -5, 5],
                   x: [5, 0, 5],
                   rotate: [-5, 0, -5],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 4 },
+                  transition: { type: "tween", repeat: Infinity, duration: 4 },
                 }}
                 style={{
                   cursor: "pointer",
@@ -319,8 +315,7 @@ function Home() {
                 animate={{
                   x: [5, 0, 5],
                   rotate: [-5, 0, -5],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 5 },
+                  transition: { type: "tween", repeat: Infinity, duration: 5 },
                 }}
                 style={{
                   cursor: "pointer",
@@ -361,8 +356,7 @@ function Home() {
                 animate={{
                   y: [0, -5, 0],
                   rotate: [-10, 0, -10],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 6 },
+                  transition: { type: "tween", repeat: Infinity, duration: 6 },
                 }}
                 style={{
                   cursor: "pointer",
@@ -415,8 +409,7 @@ function Home() {
                 animate={{
                   y: [0, -5, 0],
                   rotate: [45, 60, 45],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 4 },
+                  transition: { type: "tween", repeat: Infinity, duration: 4 },
                 }}
                 style={{
                   height: "60px",
@@ -454,9 +447,7 @@ function Home() {
                 src={"nodejs-icon.svg"}
                 animate={{
                   y: [0, -5, 0],
-
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 2 },
+                  transition: { type: "tween", repeat: Infinity, duration: 2 },
                 }}
                 style={{
                   height: "50px",
@@ -497,8 +488,7 @@ function Home() {
                   y: [5, -5, 5],
                   x: [5, 0, 5],
                   rotate: [-5, 0, -5],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 4 },
+                  transition: { type: "tween", repeat: Infinity, duration: 4 },
                 }}
                 style={{
                   height: "45px",
@@ -538,8 +528,7 @@ function Home() {
                 animate={{
                   x: [5, 0, 5],
                   rotate: [-5, 0, -5],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 5 },
+                  transition: { type: "tween", repeat: Infinity, duration: 5 },
                 }}
                 style={{
                   height: "45px",
@@ -578,8 +567,7 @@ function Home() {
                 animate={{
                   y: [0, -5, 0],
                   rotate: [10, 0, 10],
-                  type: "spring",
-                  transition: { repeat: "infinite", duration: 3 },
+                  transition: { type: "tween", repeat: Infinity, duration: 3 },
                 }}
                 style={{
                   height: "40px",
