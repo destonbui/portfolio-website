@@ -36,14 +36,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
-        // onMouseMove={(e) => {
-        //   const trailer = document.getElementById("trailer");
-
-        //   const x = e.clientX - trailer.offsetWidth / 2;
-        //   const y = e.clientY - trailer.offsetHeight / 2;
-
-        //   trailer.style.transform = `translate(${x}px, ${y}px)`;
-        // }}
         sx={{
           height: "100svh",
           width: "100vw",
@@ -60,23 +52,6 @@ function App() {
         <Navbar toggleTheme={toggleTheme} />
 
         <Outlet />
-        {/* <div
-          id="trailer"
-          style={{
-            position: "absolute",
-            zIndex: 10000,
-            top: "0px",
-            left: "0px",
-            borderRadius: "100%",
-            background: "rgb(255, 255, 255)",
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.09) 100%)",
-            boxShadow: "0px 0px 60px #fff",
-            height: "30px",
-            width: "30px",
-            pointerEvents: "none",
-          }}
-        /> */}
       </Box>
     </ThemeProvider>
   );

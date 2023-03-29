@@ -1,32 +1,50 @@
-import { Box, Typography, Button, useTheme } from "@mui/material";
-import CodeIcon from "@mui/icons-material/Code";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Box, useTheme } from "@mui/material";
 
-function Skills() {
-  const navigate = useNavigate();
-  const prev = "/projects";
-  const next = "/";
+import { useState, useContext } from "react";
+
+import { motion } from "framer-motion";
+import { MessageFormContext, FormContextType } from "../MessageFormContext";
+import ContactSnackbarDisplay from "../components/Contact/ContactSnackbarDisplay";
+import ContactPageContent from "../components/Contact/ContactPageContent";
+import ContactFormMobile from "../components/Contact/ContactFormMobile";
+import ContactForm from "../components/Contact/ContactForm";
+
+function Contact() {
+  const [snackbarOpen, setOpen] = useState(false);
+  const handleOpen = (): void => {
+    setOpen(true);
+  };
+  const handleClose = (): void => {
+    setOpen(false);
+  };
+
+  const formContext = useContext(MessageFormContext) as FormContextType;
+
   return (
     <motion.div
-      onWheel={(e) => {
-        if (e.deltaY > 0) {
-          navigate(next);
-          return;
-        } else {
-          navigate(prev);
-          return;
-        }
-      }}
       style={{
-        height: "100%",
         width: "80%",
         maxWidth: 1200,
         position: "relative",
         zIndex: 2,
       }}
-    ></motion.div>
+    >
+      <ContactSnackbarDisplay
+        handleClose={handleClose}
+        snackbarOpen={snackbarOpen}
+      />
+
+      <Box width="100%" mt={{ xs: 2, md: 10 }}>
+        <Box display="flex" flexDirection={{ xs: "column", md: "row" }}>
+          <ContactPageContent handleOpen={handleOpen} />
+
+          {/* Form only display on big screen on phone screen display as a toggle button */}
+          <ContactForm formContext={formContext} />
+          <ContactFormMobile formContext={formContext} />
+        </Box>
+      </Box>
+    </motion.div>
   );
 }
 
-export default Skills;
+export default Contact;

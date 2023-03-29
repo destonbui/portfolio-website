@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import { AnimatePresence } from "framer-motion";
+import MessageFormContextProvider from "./MessageFormContext";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,9 @@ const router = createBrowserRouter([
         path: "/contact",
         element: (
           <AnimatePresence mode="wait">
-            <Contact key="Contact" />
+            <MessageFormContextProvider>
+              <Contact key="Contact" />
+            </MessageFormContextProvider>
           </AnimatePresence>
         ),
       },

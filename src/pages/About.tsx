@@ -88,8 +88,8 @@ function About() {
             applications has always been my dream.
             <br />
             <br />
-            Therefore, in October 2022, I was fully committed to the
-            self-learning journey to become a Full-stack Web Developer.
+            In October 2022, I was fully committed to the self-learning journey
+            to become a Full-stack Web Developer.
           </Typography>
           <Box
             display="flex"
