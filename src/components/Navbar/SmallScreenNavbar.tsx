@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import DarkLightSwitch from "./DarkLightSwitch";
-import { useResolvedPath } from "react-router-dom";
+
 import { useState } from "react";
 import MenuToggle from "./MenuToggle";
 import Backdrop from "./Backdrop";
@@ -20,8 +20,6 @@ function SmallScreenNavbar({ toggleTheme }: NavbarProps) {
     setDrawerOpen(true);
   };
 
-  const pathname = useResolvedPath().pathname;
-
   return (
     <Box
       mt={{ xs: 1, sm: 1 }}
@@ -37,11 +35,7 @@ function SmallScreenNavbar({ toggleTheme }: NavbarProps) {
       <Backdrop drawerOpen={drawerOpen} closeDrawer={closeDrawer} />
 
       {/* drawer nav */}
-      <MobileDrawer
-        drawerOpen={drawerOpen}
-        closeDrawer={closeDrawer}
-        pathname={pathname}
-      />
+      <MobileDrawer drawerOpen={drawerOpen} closeDrawer={closeDrawer} />
 
       {/* Toggle icon */}
       <MenuToggle

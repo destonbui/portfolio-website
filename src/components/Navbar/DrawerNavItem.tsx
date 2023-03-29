@@ -1,23 +1,18 @@
-import { Box, List, ListItem, ListItemText } from "@mui/material";
+import { ListItem, ListItemText } from "@mui/material";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-
-import { navItems } from "../../navItems";
+import { useNavigate, useMatch } from "react-router-dom";
 
 type DrawerNavItemProps = {
   to: string;
   path: string;
-  pathname: string;
+
   closeDrawer: () => void;
 };
 
-function DrawerNavItem({
-  path,
-  to,
-  closeDrawer,
-  pathname,
-}: DrawerNavItemProps) {
+function DrawerNavItem({ path, to, closeDrawer }: DrawerNavItemProps) {
   const navigate = useNavigate();
+
+  const isCurrent = useMatch(path);
 
   const navItemVariants = {
     open: {
@@ -46,7 +41,7 @@ function DrawerNavItem({
       <ListItem
         disableGutters
         sx={
-          pathname === path
+          isCurrent
             ? {
                 pl: 5,
                 backgroundColor: "rgb(255,255,255, 0.1)",

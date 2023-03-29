@@ -1,6 +1,5 @@
 import { Box, Stack } from "@mui/material";
 
-import { useResolvedPath } from "react-router-dom";
 import DarkLightSwitch from "./DarkLightSwitch";
 
 import Logo from "./Logo";
@@ -12,8 +11,6 @@ type NavbarProps = {
 };
 
 function BigScreenNavbar({ toggleTheme }: NavbarProps) {
-  const pathname = useResolvedPath().pathname;
-
   return (
     <Box
       mt={{ xs: 2, sm: 2, md: 5 }}
@@ -33,14 +30,7 @@ function BigScreenNavbar({ toggleTheme }: NavbarProps) {
         alignItems="center"
       >
         {navItems.map((item, i) => {
-          return (
-            <TopNavItem
-              key={i}
-              pathname={pathname}
-              to={item.to}
-              path={item.path}
-            />
-          );
+          return <TopNavItem key={i} to={item.to} path={item.path} />;
         })}
 
         <DarkLightSwitch toggleTheme={toggleTheme} />

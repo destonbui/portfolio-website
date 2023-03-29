@@ -1,6 +1,5 @@
-import { Box, List, ListItem, ListItemText } from "@mui/material";
+import { Box, List } from "@mui/material";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 import { navItems } from "../../navItems";
 import DrawerNavItem from "./DrawerNavItem";
@@ -8,14 +7,9 @@ import DrawerNavItem from "./DrawerNavItem";
 type MobileDrawerProps = {
   drawerOpen: boolean;
   closeDrawer: () => void;
-  pathname: string;
 };
 
-function MobileDrawer({
-  drawerOpen,
-  closeDrawer,
-  pathname,
-}: MobileDrawerProps) {
+function MobileDrawer({ drawerOpen, closeDrawer }: MobileDrawerProps) {
   const drawerVariants = {
     open: {
       x: 0,
@@ -64,7 +58,6 @@ function MobileDrawer({
                   to={item.to}
                   path={item.path}
                   closeDrawer={closeDrawer}
-                  pathname={pathname}
                 />
               );
             })}

@@ -1,18 +1,21 @@
 import { Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useMatch } from "react-router-dom";
 
 type TopNavItemProps = {
-  pathname: string;
   to: string;
   path: string;
 };
 
-function TopNavItem({ pathname, to, path }: TopNavItemProps) {
+function TopNavItem({ to, path }: TopNavItemProps) {
   const navigate = useNavigate();
+  const isCurrent = useMatch(path);
+
   const theme = useTheme();
+
   const textPrimary = theme.palette.text.primary;
   const textSecondary = theme.palette.text.secondary;
+
   const variants = {
     normal: { color: textSecondary, transition: { duration: 0.5 } },
     active: {
@@ -24,7 +27,7 @@ function TopNavItem({ pathname, to, path }: TopNavItemProps) {
   return (
     <motion.span
       variants={variants}
-      animate={pathname === path ? "active" : "normal"}
+      animate={isCurrent ? "active" : "normal"}
       whileHover={{
         scale: 1.05,
         cursor: "pointer",
@@ -38,7 +41,6 @@ function TopNavItem({ pathname, to, path }: TopNavItemProps) {
         variant="body1"
         letterSpacing={1}
         fontFamily="Mulish"
-        // fontWeight={theme.palette.mode === "light" ? 700 : 400}
         fontWeight={400}
         sx={{
           fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
