@@ -186,7 +186,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"react-2.svg"}
                 animate={{
@@ -227,7 +227,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"nodejs-icon.svg"}
                 animate={{
@@ -267,7 +267,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"firebase-1.svg"}
                 animate={{
@@ -309,7 +309,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"material-ui-1.svg"}
                 animate={{
@@ -350,7 +350,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"framer-motion.svg"}
                 animate={{
@@ -403,7 +403,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"react-2.svg"}
                 animate={{
@@ -442,7 +442,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"nodejs-icon.svg"}
                 animate={{
@@ -481,7 +481,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"firebase-1.svg"}
                 animate={{
@@ -522,7 +522,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"material-ui-1.svg"}
                 animate={{
@@ -561,7 +561,7 @@ function Home() {
                 draggable={false}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  navigate("/skills");
+                  navigate("/about");
                 }}
                 src={"framer-motion.svg"}
                 animate={{
