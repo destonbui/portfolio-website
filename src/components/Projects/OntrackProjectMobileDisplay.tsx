@@ -41,6 +41,7 @@ function OntrackProjectMobileDisplay() {
         mt={2}
         mb={2}
       >
+        <Box height={0} pb="62.5%"></Box>
         <AnimatePresence mode="sync">
           {ontrackCurrentImg === 1 ? (
             <motion.img

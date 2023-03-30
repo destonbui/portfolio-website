@@ -144,6 +144,7 @@ function PortfolioProjectDisplay() {
         boxShadow={4}
         position="relative"
       >
+        <Box height={0} pb="62.5%"></Box>
         <AnimatePresence mode="wait">
           {currentImg === 1 ? (
             <motion.img
