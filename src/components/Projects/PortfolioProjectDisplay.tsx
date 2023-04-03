@@ -7,6 +7,7 @@ import PublicIcon from "@mui/icons-material/Public";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
+import ImageLazyLoad from "./ImageLazyLoad";
 
 function PortfolioProjectDisplay() {
   const [currentImg, setCurrent] = useState(1);
@@ -115,8 +116,8 @@ function PortfolioProjectDisplay() {
           color="text.primary"
           fontSize={{ md: "14px", lg: "16px" }}
         >
-          This is portfolio website project. It's the first project where I use
-          Typescript & Framer Motion.
+          This is my portfolio website project where I implement new skills that
+          I'm working on: Typescript & Framer Motion.
         </Typography>
 
         <Box flexGrow={1} />
@@ -147,41 +148,9 @@ function PortfolioProjectDisplay() {
         <Box height={0} pb="62.5%"></Box>
         <AnimatePresence mode="wait">
           {currentImg === 1 ? (
-            <motion.img
-              key={1}
-              src="/portfolio-ss-light.png"
-              style={{
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-
-                transition: { type: "tween" },
-              }}
-              exit={{ opacity: 0 }}
-            />
+            <ImageLazyLoad key={1} path="/portfolio-ss-light.jpg" />
           ) : currentImg === 2 ? (
-            <motion.img
-              key={2}
-              src="/portfolio-ss-dark.png"
-              style={{
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-
-                transition: { type: "tween" },
-              }}
-              exit={{ opacity: 0 }}
-            />
+            <ImageLazyLoad key={2} path="/portfolio-ss-dark.jpg" />
           ) : (
             ""
           )}

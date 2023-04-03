@@ -7,6 +7,7 @@ import PublicIcon from "@mui/icons-material/Public";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useState } from "react";
+import ImageLazyLoad from "./ImageLazyLoad";
 
 function OntrackProjectMobileDisplay() {
   const [ontrackCurrentImg, setCurrent] = useState(1);
@@ -44,59 +45,11 @@ function OntrackProjectMobileDisplay() {
         <Box height={0} pb="62.5%"></Box>
         <AnimatePresence mode="sync">
           {ontrackCurrentImg === 1 ? (
-            <motion.img
-              key={1}
-              src="/ontrack-ss-dashboard.png"
-              style={{
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-
-                transition: { type: "tween" },
-              }}
-              exit={{ opacity: 0 }}
-            />
+            <ImageLazyLoad key={1} path="/ontrack-ss-dashboard.jpg" />
           ) : ontrackCurrentImg === 2 ? (
-            <motion.img
-              key={2}
-              src="/ontrack-ss-projects.png"
-              style={{
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-
-                transition: { type: "tween" },
-              }}
-              exit={{ opacity: 0 }}
-            />
+            <ImageLazyLoad key={2} path="/ontrack-ss-projects.jpg" />
           ) : ontrackCurrentImg === 3 ? (
-            <motion.img
-              key={3}
-              src="/ontrack-ss-project-details.png"
-              style={{
-                maxWidth: "100%",
-                objectFit: "contain",
-              }}
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-
-                transition: { type: "tween" },
-              }}
-              exit={{ opacity: 0 }}
-            />
+            <ImageLazyLoad key={3} path="/ontrack-ss-project-details.jpg" />
           ) : (
             ""
           )}
