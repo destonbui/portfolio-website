@@ -18,10 +18,11 @@ function DarkLightSwitch({ toggleTheme }: DarkLightSwitchProps) {
         variants={{
           light: {
             backgroundColor: "rgb(245, 245, 245)",
-            top: -9999 / 2,
-            left: -9999 / 2,
-            width: 9999,
-            height: 9999,
+            top: -4000 / 2,
+            left: -4000 / 2,
+            width: 4000,
+            height: 4000,
+            borderRadius: "100%",
           },
           dark: {
             backgroundColor: "rgb(18,18,18)",
@@ -35,10 +36,11 @@ function DarkLightSwitch({ toggleTheme }: DarkLightSwitchProps) {
           position: "absolute",
           zIndex: -1,
         }}
+        initial="dark"
         animate={theme.palette.mode}
         transition={{
-          duration: 0.8,
-          type: "tween",
+          duration: 0.7,
+          ease: [0.75, 0.36, 0.46, 0.91],
         }}
       ></motion.div>
       <motion.div
