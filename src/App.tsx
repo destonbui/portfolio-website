@@ -46,6 +46,8 @@ function App() {
           overflow: "hidden",
           position: "relative",
           zIndex: 0,
+          backgroundImage: "radial-gradient(rgb(50 50 50) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
         }}
         id="App"
       >

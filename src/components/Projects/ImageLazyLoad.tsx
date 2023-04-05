@@ -22,7 +22,7 @@ function ImageLazyLoad({ path }: { path: string }) {
         opacity: isLoaded ? 1 : 0,
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.3,
         type: "tween",
       }}
       exit={{ opacity: 0 }}
