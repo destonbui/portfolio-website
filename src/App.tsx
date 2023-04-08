@@ -1,19 +1,12 @@
-import { useState, useEffect } from "react";
-import { Outlet, useLocation, useMatch } from "react-router-dom";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Navbar from "./components/Navbar/Navbar";
 
-import { useNavigate } from "react-router-dom";
-
 function App() {
-  const [current, setCurrent] = useState<string>("/");
-
-  const currentPath = useLocation();
-  const navigate = useNavigate();
-
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
@@ -24,7 +17,7 @@ function App() {
 
   const lightTheme = createTheme({
     palette: { mode: "light", primary: { main: "#000" } },
-    typography: { fontFamily: `"Mulish", "Philosopher"` },
+    typography: { fontFamily: `"Mulish"` },
   });
 
   const [theme, setTheme] = useState(darkTheme);
@@ -39,65 +32,27 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCurrent(currentPath.pathname);
-    }, 1500);
-  }, [currentPath]);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
-        onWheel={(e) => {
-          switch (current) {
-            case "/":
-              if (e.deltaY > 0) {
-                navigate("/about");
-              } else {
-                navigate("/contact");
-              }
-              break;
-
-            case "/about":
-              if (e.deltaY > 0) {
-                navigate("/projects");
-              } else {
-                navigate("/");
-              }
-              break;
-
-            case "/projects":
-              if (e.deltaY > 0) {
-                navigate("/contact");
-              } else {
-                navigate("/about");
-              }
-              break;
-
-            case "/contact":
-              if (e.deltaY > 0) {
-                navigate("/");
-              } else {
-                navigate("/projects");
-              }
-              break;
-
-            default:
-              break;
-          }
-        }}
         sx={{
           height: "100svh",
           width: "100vw",
-          backgroundColor: "rgb(18,18,18)",
+          backgroundColor:
+            theme.palette.mode === "light" ? "#fafafa" : "rgb(18,18,18)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          overflow: "hidden",
+          overflowY: "auto",
+          overflowX: "hidden",
           position: "relative",
           zIndex: 0,
-          backgroundImage: "radial-gradient(rgb(50 50 50) 1px, transparent 0)",
+          backgroundImage: `radial-gradient(${
+            theme.palette.mode === "light"
+              ? "rgb(200 200 200)"
+              : "rgb(50 50 50)"
+          } 1px, transparent 0)`,
           backgroundSize: "40px 40px",
         }}
         id="App"

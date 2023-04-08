@@ -19,6 +19,7 @@ function Logo() {
       style={{ cursor: "pointer" }}
       variants={logoVariants}
       animate={theme.palette.mode}
+      transition={{ duration: 0 }}
     ></motion.img>
   );
 }

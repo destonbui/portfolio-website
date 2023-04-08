@@ -3,7 +3,6 @@ import ArrowLeft from "@mui/icons-material/KeyboardArrowLeftOutlined";
 import ArrowRight from "@mui/icons-material/KeyboardArrowRightOutlined";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Divider from "@mui/material/Divider";
 import OntrackProjectDisplay from "../components/Projects/OntrackProjectDisplay";
@@ -42,7 +41,7 @@ function Skills() {
         justifyContent="center"
         width="100%"
         maxHeight="100%"
-        pt={10}
+        py={5}
         display={{ xs: "none", md: "flex" }}
       >
         <motion.div
@@ -155,6 +154,7 @@ function Skills() {
         width="100%"
         maxHeight="100%"
         pt={2}
+        pb={5}
         display={{ xs: "flex", md: "none" }}
       >
         <motion.div

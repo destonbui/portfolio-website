@@ -30,6 +30,7 @@ function Home() {
           mt={{ xs: 2, sm: 2, md: 10 }}
           width={{ xs: "100%", sm: "100%", md: "55%" }}
           position="relative"
+          pb={{ xs: 2, md: 10 }}
         >
           <motion.div
             initial={{ opacity: 0 }}

@@ -15,14 +15,14 @@ const containerVariants = {
   exit: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
 };
 const iconVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  exit: { opacity: 0, y: -50 },
+  exit: { opacity: 0, y: -30 },
 };
 const defaultVariants = {
-  hidden: { opacity: 0, y: -50 },
+  hidden: { opacity: 0, y: -30 },
   show: { opacity: 1, y: 0 },
-  exit: { y: 50, opacity: 0 },
+  exit: { y: 30, opacity: 0 },
 };
 
 function About() {
@@ -44,6 +44,7 @@ function About() {
         width="100%"
         justifyContent="space-between"
         mt={{ xs: 2, md: 2, lg: 10 }}
+        pb={5}
       >
         <motion.div
           style={{

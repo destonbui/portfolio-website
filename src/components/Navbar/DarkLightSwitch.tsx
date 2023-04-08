@@ -14,12 +14,12 @@ function DarkLightSwitch({ toggleTheme }: DarkLightSwitchProps) {
 
   return (
     <Box>
-      <motion.div
+      {/* <motion.div
         variants={{
           light: {
             backgroundColor: "rgb(245, 245, 245)",
             top: -4000 / 2,
-            left: -4000 / 2,
+            left: -2000 / 2,
             width: 4000,
             height: 4000,
             borderRadius: "100%",
@@ -42,7 +42,7 @@ function DarkLightSwitch({ toggleTheme }: DarkLightSwitchProps) {
           duration: 0.7,
           ease: [0.75, 0.36, 0.46, 0.91],
         }}
-      ></motion.div>
+      ></motion.div> */}
       <motion.div
         style={{ borderRadius: "100%" }}
         initial={{ scale: 1 }}

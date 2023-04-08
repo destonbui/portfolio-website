@@ -34,7 +34,7 @@ function Contact() {
         snackbarOpen={snackbarOpen}
       />
 
-      <Box width="100%" mt={{ xs: 2, md: 10 }}>
+      <Box width="100%" mt={{ xs: 2, md: 10 }} pb={5}>
         <Box display="flex" flexDirection={{ xs: "column", md: "row" }}>
           <ContactPageContent handleOpen={handleOpen} />
 
