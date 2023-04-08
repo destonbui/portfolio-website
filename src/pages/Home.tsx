@@ -378,6 +378,7 @@ function Home() {
 
         <Box
           mt={{ xs: 5, sm: 5 }}
+          pb={5}
           width="100%"
           display={{ xs: "flex", sm: "flex", md: "none" }}
           flexDirection="row"
