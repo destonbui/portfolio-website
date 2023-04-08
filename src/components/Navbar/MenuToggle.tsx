@@ -16,7 +16,12 @@ export default function MenuToggle({
 
   return (
     <motion.svg
-      style={{ position: "relative", zIndex: 10, paddingTop: 4 }}
+      style={{
+        position: "relative",
+        zIndex: 10,
+        paddingTop: 4,
+        cursor: "pointer",
+      }}
       onClick={() => {
         drawerOpen ? close() : open();
       }}
