@@ -14,7 +14,7 @@ function BigScreenNavbar({ toggleTheme }: NavbarProps) {
   return (
     <Box
       mt={{ xs: 2, sm: 2, md: 5 }}
-      height="80px"
+      maxHeight="100%"
       width="80%"
       maxWidth={1200}
       display={{ xs: "none", sm: "none", md: "flex" }}
