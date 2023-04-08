@@ -59,7 +59,6 @@ function FormDisplay({ formContext }: ContactFormProps) {
           }}
           type="text"
           variant="standard"
-          color={nameErrMsg || name === "" ? undefined : "success"}
           size="small"
           label="Name"
         ></TextField>
@@ -75,7 +74,6 @@ function FormDisplay({ formContext }: ContactFormProps) {
           helperText={emailErrMsg ? emailErrMsg : ""}
           type="email"
           variant="standard"
-          color={emailErrMsg || email === "" ? undefined : "success"}
           size="small"
           label="Email"
         ></TextField>

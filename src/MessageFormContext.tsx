@@ -57,13 +57,17 @@ export default function MessageFormContextProvider({ children }: any) {
     }
   };
 
-  const emailCheck = (val: string): void => {
+  const emailCheck = (val: string): boolean => {
     if (val === "") {
       setEmailErrMsg("Please enter your email address.");
+      return false;
     } else {
       if (!validateEmail(val)) {
         setEmailErrMsg("Invalid email address.");
+        return false;
       } else setEmailErrMsg(null);
+
+      return true;
     }
   };
 
@@ -76,7 +80,6 @@ export default function MessageFormContextProvider({ children }: any) {
     }
     if (type === "email") {
       setEmail(newVal);
-      emailCheck(newVal);
     }
     if (type === "message") {
       setMessage(newVal);
@@ -86,12 +89,7 @@ export default function MessageFormContextProvider({ children }: any) {
 
   //   Check if user can submit contact form
   const canSubmit =
-    name === "" ||
-    email === "" ||
-    message === "" ||
-    nameErrMsg ||
-    emailErrMsg ||
-    messageErrMsg
+    name === "" || email === "" || message === "" || nameErrMsg || messageErrMsg
       ? false
       : true;
 
@@ -106,22 +104,24 @@ export default function MessageFormContextProvider({ children }: any) {
   };
 
   const handleSubmit = (): void => {
-    const result = emailjs.send(
-      import.meta.env.VITE_APP_SERVICE_KEY,
-      import.meta.env.VITE_APP_TEMPLATE_ID,
-      { name: name, email: email, message: message },
-      import.meta.env.VITE_APP_PUBLIC_KEY
-    );
-    setFormAccess(false);
+    if (emailCheck(email) && canSubmit) {
+      const result = emailjs.send(
+        import.meta.env.VITE_APP_SERVICE_KEY,
+        import.meta.env.VITE_APP_TEMPLATE_ID,
+        { name: name, email: email, message: message },
+        import.meta.env.VITE_APP_PUBLIC_KEY
+      );
+      setFormAccess(false);
 
-    result.then((res) => {
-      if (res.status === 200) {
-        setMessageSent(true);
-        cleanUp();
-      } else {
-        setMessageSent(false);
-      }
-    });
+      result.then((res) => {
+        if (res.status === 200) {
+          setMessageSent(true);
+          cleanUp();
+        } else {
+          setMessageSent(false);
+        }
+      });
+    }
   };
 
   //   handle retry when message sent failed
